@@ -1,4 +1,4 @@
-// Patent Slider
+// patent slider
 let patentCurrentIndex = 0;
 const patentCards = document.querySelectorAll('.patent-card');
 const patentTrack = document.getElementById('patent-track');
@@ -24,14 +24,14 @@ if (document.getElementById('pat-prev')) {
   });
 }
 
-// Achievements Slider
+// achievements slider
 let achCurrentIndex = 0;
 const achCards = document.querySelectorAll('.ach-card');
 const achTrack = document.getElementById('ach-track');
 const achDots = document.getElementById('ach-dots');
 const achFill = document.getElementById('ach-fill');
 
-// Generate dots
+// generate dots
 function generateAchievementDots() {
   if (achDots) {
     achCards.forEach((_, index) => {
@@ -49,14 +49,14 @@ function updateAchievementSlider() {
     achTrack.style.transform = `translateX(${offset}%)`;
   }
   
-  // Update dots
+  // update dots
   if (achDots) {
     document.querySelectorAll('.slider-dots span').forEach((dot, index) => {
       dot.classList.toggle('active', index === achCurrentIndex);
     });
   }
-  
-  // Update progress bar
+
+  // update progress bar
   if (achFill && achCards.length > 0) {
     const progress = ((achCurrentIndex + 1) / achCards.length) * 100;
     achFill.style.width = progress + '%';
@@ -80,9 +80,7 @@ if (document.getElementById('ach-prev')) {
     achCurrentIndex = (achCurrentIndex - 1 + achCards.length) % achCards.length;
     updateAchievementSlider();
   });
-}
-
-// Milestone Slider
+// milestone slider
 let msCurrentIndex = 5; // Default to 2023
 const msCards = document.querySelectorAll('.milestone-card');
 const msTrack = document.getElementById('ms-track');
@@ -93,13 +91,13 @@ function updateMilestoneSlider() {
     const offset = -msCurrentIndex * 100;
     msTrack.style.transform = `translateX(${offset}%)`;
   }
-  
-  // Update timeline dots
+
+  // update timeline dots
   document.querySelectorAll('.tl-year').forEach((year, index) => {
     year.classList.toggle('active', index === msCurrentIndex);
   });
-  
-  // Update progress bar
+
+  // update progress bar
   if (msFill && msCards.length > 0) {
     const progress = ((msCurrentIndex + 1) / msCards.length) * 100;
     msFill.style.width = progress + '%';
@@ -125,30 +123,15 @@ if (document.getElementById('ms-prev')) {
   });
 }
 
-// Events Gallery
+// events gallery
 function setEvent(button, eventType) {
   document.querySelectorAll('.events-tabs button').forEach(btn => btn.classList.remove('active'));
   button.classList.add('active');
-  
-  const eventImages = {
-    'thomso': 'images/awards.png',
-    'iitrms': 'images/RMS.png',
-    'convocation': 'images/awards.png',
-    'cognizance': 'images/awards.png',
-    'tedx': 'images/awards.png',
-    'eunoia': 'images/awards.png',
-    'interiit': 'images/awards.png'
-  };
-  
-  const imgElement = document.getElementById('event-img');
-  if (imgElement) {
-    imgElement.src = eventImages[eventType] || 'images/RMS.png';
-  }
+
 }
 
-// Initialize achievements dots
+// initialize achievements dots
 generateAchievementDots();
 
-// Initialize milestone slider
-updateMilestoneSlider();
-
+// initialize milestone slider
+updateMilestoneSlider(); }
