@@ -80,6 +80,7 @@ if (document.getElementById('ach-prev')) {
     achCurrentIndex = (achCurrentIndex - 1 + achCards.length) % achCards.length;
     updateAchievementSlider();
   });
+}
 // milestone slider
 let msCurrentIndex = 5; // Default to 2023
 const msCards = document.querySelectorAll('.milestone-card');
@@ -134,4 +135,4 @@ function setEvent(button, eventType) {
 generateAchievementDots();
 
 // initialize milestone slider
-updateMilestoneSlider(); }
+updateMilestoneSlider(); 
