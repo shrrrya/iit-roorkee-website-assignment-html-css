@@ -63,7 +63,7 @@ display: flex; justify-content: space-between; align-items: center; gap: 20px;
 
   .hero {
       position: relative; height: 430px;
-      background:url("images/Video.png") center/cover no-repeat;
+      background:url("images/Video.svg") center/cover no-repeat;
       display: flex; align-items: center;
     }
     /* .videoOverlay::after {
